@@ -1,0 +1,7 @@
+
+def output():
+    print("Hello World")
+    print("this is my first program")
+    
+
+output()
