@@ -1,0 +1,81 @@
+#RPG Inventory
+import random
+
+Inventory = []
+
+MysteryBox = ["Sword","Apple","Laundry Basket","Laundry Detergent Pod"]
+
+
+
+
+def Unbox():
+  Seed = random.randint(1,100000)
+  random.seed(Seed)
+  
+  Box = []
+  
+  
+  Box.append(random.choice(MysteryBox))
+    
+  
+  print(Box[0])
+  Inventory.append(Box[0])
+  
+  
+  #Back to action
+  Action()
+  
+
+
+
+
+
+
+def Craft():
+  
+  Recipes = {
+    "Gem" : [
+      "Apple",
+      "Sword"
+      ]
+  }
+  
+  
+  
+  pass
+
+
+
+
+
+def Drop():
+  print("Drop")
+  pass
+
+
+
+
+
+def Action():
+  Outcomes = {
+    "CRAFT" : Craft,
+    "DROP" : Drop,
+    "UNBOX": Unbox
+  }
+  
+  action = input("What is your action?:\n [DROP][CRAFT][UNBOX]: ").upper()
+  
+  
+  Found = False
+  for i in Outcomes:
+    if i == action:
+      Found = True
+      Outcomes[action]()
+      
+  if Found == False:
+    Action()
+      
+      
+      
+
+Action()
