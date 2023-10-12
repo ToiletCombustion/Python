@@ -1,0 +1,33 @@
+
+def replace(original, replacement, array):
+  Changes = 0
+  
+  
+  for index,word in enumerate(array):
+    if word == original:
+      Changes = Changes + 1
+      array[index] = replacement
+  
+  if Changes > 0:
+    output(array)
+  else:
+    print("Invalid Word, Cant find it")
+    return None
+
+
+def output(array):
+  print(array)
+
+        
+        
+
+rhyme = ["roly", "poly", "roly", "poly", "up", "up", "up", 
+         "roly", "poly", "roly", "poly", "down", "down", "down"]
+
+
+Replace = input("What word do you want to replace?")
+Replacement = input("What is the replacement?")
+
+replace(Replace,Replacement,rhyme)
+
+
