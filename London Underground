@@ -1,0 +1,46 @@
+
+Stations = ["Brixton", "Stockwell", "Vauxhall", "Pimlico", "Victoria", "Green Park", "Oxford Circus", "Warren Street", "Euston", "King's Cross", "Highbury & Islington", "Finsbury Park", "Seven Sisters", "Tottenham Hale", "Blackhorse Road", "Walthamstow Central"]
+
+
+
+
+def Calculate(S1,S2):
+  
+  S1INDEX = None
+  S2INDEX = None
+  for index,station in enumerate(Stations):
+    if station == S1:
+      S1INDEX = index + 1
+    if station == S2:
+      S2INDEX = index + 1
+    
+  
+  Stops = S2INDEX - S1INDEX
+  
+  print("BETWEEN STOPS : \n" + str(abs(Stops)))
+  
+  
+  
+
+
+def Ask():
+  station1 = input("\nWhat is the 1st station?: ")
+  station2 = input("\nWhat is the 2nd station?: ")
+  
+  F1,F2 = False,False
+  
+  for i in Stations:
+    if i == station1:
+      F1 = True
+    elif i == station2:
+      F2 = True
+      
+  
+  if F1 and F2:
+    Calculate(station1,station2)
+  else:
+    print("\ninvalid station\n Station1: " + str(F1) + "\n Station2: " + str(F2))
+    Ask()
+  
+  
+Ask()
