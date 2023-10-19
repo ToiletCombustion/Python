@@ -1,0 +1,28 @@
+
+
+
+Currencies = {
+  "USD" : 1.3,
+  "EURO" : 1.11,
+  "YUAN" : 8.92,
+  "YEN": 138.44
+
+}
+
+
+
+def convert(GBP,Curr):
+  
+  
+  Conversion = Currencies[Curr]
+  TOTAL = float(GBP) * float(Conversion)
+  
+  print("Your total is " + str(TOTAL))
+
+GBP = input("how much GBP?:\n: ")
+Currency = input("What Currency?:\n[USD,EURO,YUAN,YEN] : ")
+
+for i in Currencies:
+  if i == Currency.upper():
+    convert(GBP,Currency)
+
